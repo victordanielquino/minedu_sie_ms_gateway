@@ -6,6 +6,7 @@ import config from './common/config/config';
 import { enviroments } from './common/config/enviroments';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AppService } from './app.service';
         DATABASE_URL: Joi.string().required(),
       }),
     }),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
