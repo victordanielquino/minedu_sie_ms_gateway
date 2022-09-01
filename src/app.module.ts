@@ -7,6 +7,7 @@ import { enviroments } from './common/config/enviroments';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './modules/user/user.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -15,11 +16,15 @@ import { UserModule } from './modules/user/user.module';
       load: [config],
       isGlobal: true,
       validationSchema: Joi.object({
-        JWT_SECRET: Joi.string().required(),
         DATABASE_URL: Joi.string().required(),
+        JWT_SECRET: Joi.string().required(),
+        JWT_EXPIRE: Joi.string().required(),
+        APP_URL: Joi.string().required(),
+        APP_PORT: Joi.number().required(),
       }),
     }),
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
