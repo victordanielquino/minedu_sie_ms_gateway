@@ -4,6 +4,7 @@ import { ApiBearerAuth } from '@nestjs/swagger';
 
 import { AuthJwtGuard } from '../guards';
 
+/*
 export const AuthDecorator = (...roles: Role[]) => {
   return applyDecorators(
     UseGuards(AuthJwtGuard, ACGuard),
@@ -11,3 +12,4 @@ export const AuthDecorator = (...roles: Role[]) => {
     ApiBearerAuth(),
   );
 };
+*/

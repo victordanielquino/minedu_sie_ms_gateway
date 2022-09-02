@@ -10,7 +10,7 @@ import { IS_PUPLIC_KEY } from '../decorators';
 
 @Injectable()
 export class AuthJwtGuard extends AuthGuard('jwt') {
-  constructor(private reflector: Reflector) {
+  /*constructor(private reflector: Reflector) {
     super();
   }
 
@@ -28,5 +28,5 @@ export class AuthJwtGuard extends AuthGuard('jwt') {
       throw err || new UnauthorizedException('No estas authenticado');
     }
     return user;
-  }
+  }*/
 }
